@@ -12,37 +12,33 @@
         <link rel="stylesheet" href="/static/assets/css/noscript.css"/>
     </noscript>
 </head>
+
 <body class="is-preload">
-
-<!-- Header -->
-<header id="header">
-    <div class="content mb-3">
-        <h1>Custom API Based Website</h1>
-    </div>
-</header>
-
-<!-- One -->
 <div class="container">
-    <h2>Top Companies</h2>
+    <h2>{{eod_data[0]["name"]}} - {{eod_data[0]["symbol"]}}</h2>
     <section id="one" class="wrapper style2 special">
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Symbol</th>
-                <th>Exchange</th>
-                <th>City</th>
-                <th>Country</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Price currency</th>
+                <th>Volume</th>
+                <th>Date</th>
             </tr>
             </thead>
             <tbody>
-            {% for data_values in data %}
+            {% for data in eod_data %}
             <tr>
-                <td>{{data_values['name']}}</td>
-                <td><a href="{{ url_for('routes.view', symbol=data_values['symbol']) }}">{{data_values['symbol']}}</a></td>
-                <td>{{data_values['stock_exchange']['acronym']}}</td>
-                <td>{{data_values['stock_exchange']['city']}}</td>
-                <td>{{data_values['stock_exchange']['country_code']}}</td>
+                <td>{{data['open']}}</td>
+                <td>{{data['high']}}</td>
+                <td>{{data['low']}}</td>
+                <td>{{data['close']}}</td>
+                <td>{{data['price_currency']}}</td>
+                <td>{{data['volume']}}</td>
+                <td>{{data['date'][:10]}}</td>
             </tr>
             {% endfor %}
             </tbody>
