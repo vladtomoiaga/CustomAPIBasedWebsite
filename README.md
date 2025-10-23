@@ -56,4 +56,4 @@ Below is how you can install and setting up the website.
 * The homepage will display exchange data in a table format
 * The viewpage will display exchange data of the respective company in a table format
 * Make sure you have a valid API `access_key` configured
-* The data is fetched live from the exchange API
+* The data is fetched live from the exchange API (https://api.marketstack.com)
