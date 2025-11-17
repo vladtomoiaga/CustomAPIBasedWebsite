@@ -4,6 +4,9 @@
 
 <div class="container">
     <h2>{{eod_data[0]["name"]}} - {{eod_data[0]["symbol"]}}</h2>
+    <a href="{{ url_for('routes.plot') }}?symbol={{ eod_data[0]['symbol'] }}" target="_blank" class="d-block mx-auto text-center">
+        View evolution {{ eod_data[0]['symbol']}}
+    </a>
     <section id="one" class="wrapper style2 special">
         <table class="table table-striped">
             <thead>

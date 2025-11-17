@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}{{ symbol }} Stocks{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h2 class="text-center mb-4">{{ symbol }} Stocks</h2>
+    {{ graph_html|safe }}
+</div>
+{% endblock %}
